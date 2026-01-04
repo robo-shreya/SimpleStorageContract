@@ -25,7 +25,7 @@ contract SimpleStorage {
         return num;
     }
 
-    function addPerson(string memory _name, uint _num) public {
+    function addPerson(string memory _name, uint256 _num) public {
         listOfPeople.push(Person(_name, _num));
         nameToNum[_name] = _num;
     }
