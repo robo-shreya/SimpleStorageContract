@@ -1,12 +1,10 @@
 //SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.18;
+pragma solidity ^0.8.19;
 
 import {SimpleStorage} from "./SimpleStorage.sol";
 
 contract StorageFactory {
-
-    //variables - "type visibility name"
 
     SimpleStorage[] public listOfSimpleStorageContracts;
     // creating a list which will keep a record of addresses of already deployed SimpleStorage

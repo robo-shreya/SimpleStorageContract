@@ -6,6 +6,7 @@ pragma solidity ^0.8.19;
 // pragma solidity >=0.8.0 <0.9.0;
 
 contract SimpleStorage {
+    //variables : type-visibility-name
     uint256 num;
 
     struct Person {
@@ -16,6 +17,8 @@ contract SimpleStorage {
     Person[] public listOfPeople;
 
     mapping(string => uint256) public nameToNum;
+
+    //functions : function-name()-access-modifier-pure/view/payable-returns(){}
 
     function store(uint256 _num) public {
         num = _num;
