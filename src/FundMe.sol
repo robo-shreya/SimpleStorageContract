@@ -25,9 +25,13 @@ contract FundMe{
     }
 
     function getVersion() public view returns (uint256) {
-        // getting realtime price data from chainlink
-        // added a ton of files because of import, not adding to git
+        // getting realtime price data from chainlink - 0x694AA1769357215DE4FAC081bf1f309aDC325306
+        return AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306).version();
+    }
+
+    function getPrice() public view returns (uint256){
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
-        return priceFeed.version();
+        (,int256 price,,,) = priceFeed.latestRoundData();
+        return uint256(price * 1e10);
     }
 }
